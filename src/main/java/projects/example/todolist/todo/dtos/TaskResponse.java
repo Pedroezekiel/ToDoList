@@ -1,10 +1,11 @@
 package projects.example.todolist.todo.dtos;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class TaskResponse {
 
     public String message;

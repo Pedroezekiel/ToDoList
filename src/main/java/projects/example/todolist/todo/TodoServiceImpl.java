@@ -1,10 +1,7 @@
 package projects.example.todolist.todo;
 
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import projects.example.todolist.todo.dtos.TaskRequest;
 import projects.example.todolist.todo.dtos.TaskResponse;
@@ -18,9 +15,17 @@ public class TodoServiceImpl implements TodoService{
 
     private final ModelMapper mapper;
 
-    public void createTask(TaskRequest taskRequest) throws Exception{
+    private final TaskRepository taskRepository;
 
-        Todo todo = mapper.map(taskRequest, Todo.class);
+
+
+    public TaskResponse createTask(TaskRequest taskRequest) throws Exception{
+
+        Todo todo = Todo.builder().task(taskRequest.task).build();
+
+        taskRepository.save(todo);
+
+        return TaskResponse.builder().message("passed").build();
 
     }
 

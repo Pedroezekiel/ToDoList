@@ -1,14 +1,17 @@
 package projects.example.todolist.todo.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
+import java.io.Serializable;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 
-public class TaskRequest {
+public class TaskRequest implements Serializable {
 
     public String task;
 

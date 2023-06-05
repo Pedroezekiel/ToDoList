@@ -5,16 +5,16 @@ import jakarta.persistence.Id;
 import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 
-@Getter
-@Setter
 @RequiredArgsConstructor
 @Entity
+@AllArgsConstructor
 @Builder
+@Data
 public class Todo {
 
     @Id
     @UuidGenerator
-    private long id;
+    private String id;
 
     private String task;
 
