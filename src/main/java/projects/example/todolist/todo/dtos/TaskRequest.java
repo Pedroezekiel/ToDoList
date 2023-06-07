@@ -8,8 +8,8 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 
 public class TaskRequest implements Serializable {
 
