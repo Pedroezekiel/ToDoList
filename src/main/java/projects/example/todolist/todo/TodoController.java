@@ -30,6 +30,12 @@ public class TodoController {
         return todoService.deleteTask(id);
     }
 
+    @PatchMapping("get/{id}")
+    public TaskResponse doneTask(@PathVariable String id) throws Exception{
+        return todoService.doneTask(id);
+    }
+
+
 
 
 

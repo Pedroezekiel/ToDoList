@@ -10,4 +10,6 @@ public interface TodoService {
 
     TaskResponse deleteTask(String id) throws Exception;
 
+    TaskResponse doneTask(String id) throws Exception;
+
 }

@@ -39,4 +39,12 @@ public class TodoServiceImpl implements TodoService{
         return TaskResponse.builder().message("Task deleted").build();
     }
 
+
+    public TaskResponse doneTask(String id) throws Exception {
+        Todo todo = taskRepository.findById(id).orElseThrow(()-> new Exception("Task not found"));
+        todo.setDone(true);
+        taskRepository.save(todo);
+        return TaskResponse.builder().message("Task added to completed tasks").build();
+    }
+
 }
